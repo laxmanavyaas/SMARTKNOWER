@@ -1,0 +1,48 @@
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "test",
+  password: "cskipl@2018",
+  database: "onlinevidya"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "CREATE TABLE student (sno INT AUTO_INCREMENT PRIMARY KEY, Name VARCHAR(10), Phone LONGINT, email VARCHAR(10), course VARCHAR(5))";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table created");
+  var sql1 = "INSERT INTO student (sno, Name, Phone, email, course) VALUES (1, 'Vyaas', 9000137208, 'xyz@gmail.com', 'CSE')";
+  var sql2 = "INSERT INTO student (sno, Name, Phone, email, course) VALUES (2, 'Vishnu', 8019813614, 'zcr@gmail.com', 'ECE')";
+  var sql3 = "INSERT INTO student (sno, Name, Phone, email, course) VALUES (3, 'Vamshi', 8790722168, 'fad@gmail.com', 'EEE')";
+  var sql4 = "INSERT INTO student (sno, Name, Phone, email, course) VALUES (4, 'Saketh', 9014281446, 'abc@gmail.com', 'MECH')";
+  var sql5 = "INSERT INTO student (sno, Name, Phone, email, course) VALUES (1, 'Harsha', 7793956004, 'ish@gmail.com', 'Civil')";
+  con.query(sql1, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  con.query(sql2, function (err, result) {
+    else if (err) throw err;
+    console.log("2 record inserted");
+  con.query(sql3, function (err, result) {
+    else if (err) throw err;
+    console.log("3 record inserted");
+  con.query(sql4, function (err, result) {
+    else if (err) throw err;
+    console.log("4 record inserted");
+  con.query(sql5, function (err, result) {
+    else if (err) throw err;
+    console.log("5 record inserted");
+  con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM students", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
+});
+});
+});
+});
+});
+});
